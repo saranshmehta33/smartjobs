@@ -1,35 +1,88 @@
-# 💼 SmartJobs
+# 💼 Smart Jobs
 
-A full-stack job portal built with the **MERN stack** that connects job seekers with employers. [One line on your standout feature, e.g. "Employers post openings; candidates search and apply in a few clicks."]
+A full-stack job portal built with the **MERN stack** where employers post job openings and job seekers search and apply for them. Smart Jobs aims to make the job search experience intuitive and efficient for both sides.
 
-[![Node](https://img.shields.io/badge/Node-18.13.0-green)]()
-[![License](https://img.shields.io/badge/license-ISC-blue)]()
-
-**Live Demo:** [link if deployed] · **Screenshots:** see below
+**Live Demo:** [add your deployed link here]
 
 ---
 
-## ✨ Features
+## 📌 Problem Statement
 
-- [User registration and login]
-- [Browse and search job listings]
-- [Apply to jobs]
-- [Employers post, edit and delete jobs]
-- [Filter by role / location / experience]
-- [Responsive UI]
+Build a job board website where employers can post job openings and job seekers can search and apply for jobs, using React.js, Node.js and a database (MongoDB or PostgreSQL). The project covers:
 
-> Replace the list above with what your app actually does.
+| # | Requirement | Description |
+|---|-------------|-------------|
+| 1 | Home Page | Display featured job listings |
+| 2 | Job Listings Page | List of job openings with essential details |
+| 3 | Job Detail Page | Detailed information about a specific job |
+| 4 | Employer Dashboard | Account management and job posting |
+| 5 | Candidate Dashboard | Profile management and job applications |
+| 6 | Job Application Process | Application form with resume upload |
+| 7 | Search Functionality | Search bar for finding specific jobs |
+| 8 | User Authentication | Secure user login and data protection |
+| 9 | Responsiveness | Works well on different devices |
 
 ---
 
-## 🛠 Tech Stack
+## 🎯 Objectives
 
-| Layer     | Technology                                   |
-|-----------|----------------------------------------------|
-| Frontend  | React, Redux, Redux Thunk, Axios             |
-| Backend   | Node.js, Express                             |
-| Database  | MongoDB with Mongoose                        |
-| Other     | Moment.js, Nodemon, Concurrently             |
+The goal of this internship project was to independently design, develop and deploy a fully functional job portal. It required hands-on expertise across the MERN stack: MongoDB, Express.js, React.js and Node.js.
+
+---
+
+## 🛠 Technologies Used
+
+I was the sole contributor and implemented the entire stack myself.
+
+| Technology | Usage |
+|------------|-------|
+| MongoDB | Database design and management |
+| Express.js | Building the server-side application |
+| React.js | Constructing the entire user interface |
+| Ant Design (AntD) | UI component library for the interface |
+| Node.js | Running the server-side JavaScript |
+| Redux, Redux Thunk | State management |
+| Axios | HTTP requests from the client |
+| Mongoose | MongoDB object modelling |
+
+---
+
+## 📦 Modules
+
+### 1. Authentication
+- **Login:** secure sign-in for employers and candidates
+- **Register:** account creation for new users
+
+### 2. Home
+Landing page showing featured job listings and the search bar.
+
+### 3. Candidate Features
+- **Profile:** manage personal details
+- **Applied Jobs:** track every job you have applied to
+
+### 4. Employer Features
+- **Post Job:** create a new job opening
+- **Posted Jobs:** view and manage the jobs you have posted
+
+---
+
+## 📸 Screenshots
+
+| Login | Register |
+|-------|----------|
+| ![Login](./screenshots/login.png) | ![Register](./screenshots/register.png) |
+
+| Home | Profile |
+|------|---------|
+| ![Home](./screenshots/home.png) | ![Profile](./screenshots/profile.png) |
+
+| Applied Jobs | Post Job |
+|--------------|----------|
+| ![Applied Jobs](./screenshots/applied-jobs.png) | ![Post Job](./screenshots/post-job.png) |
+
+| Posted Jobs |
+|-------------|
+| ![Posted Jobs](./screenshots/posted-jobs.png) |
 
 ---
 
@@ -37,7 +90,7 @@ A full-stack job portal built with the **MERN stack** that connects job seekers 
 
 ```
 smartjobs/
-├── client/        # React frontend
+├── client/        # React frontend (Ant Design)
 ├── models/        # Mongoose schemas
 ├── routes/        # Express API routes
 ├── db.js          # MongoDB connection
@@ -57,14 +110,14 @@ smartjobs/
 ### Installation
 
 ```bash
-# 1. Clone the repo
+# Clone the repository
 git clone https://github.com/saranshmehta33/smartjobs.git
 cd smartjobs
 
-# 2. Install server dependencies
+# Install server dependencies
 npm install
 
-# 3. Install client dependencies
+# Install client dependencies
 npm run client-install
 ```
 
@@ -75,7 +128,6 @@ Create a `.env` file in the root directory:
 ```env
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
-# Add any other variables your app uses, e.g. JWT_SECRET
 ```
 
 ### Run the App
@@ -83,12 +135,6 @@ PORT=5000
 ```bash
 # Run server and client together
 npm run dev
-
-# Server only
-npm run server
-
-# Client only
-npm run client
 ```
 
 - Frontend: http://localhost:3000
@@ -98,58 +144,21 @@ npm run client
 
 ## 📜 Available Scripts
 
-| Script                  | Description                              |
-|-------------------------|------------------------------------------|
-| `npm start`             | Start the production server              |
-| `npm run server`        | Start the backend with Nodemon           |
-| `npm run client`        | Start the React dev server               |
-| `npm run dev`           | Run backend and frontend concurrently    |
-| `npm run client-install`| Install client dependencies              |
-
----
-
-## 🔌 API Endpoints
-
-| Method | Endpoint              | Description            |
-|--------|-----------------------|------------------------|
-| POST   | `/api/[users/register]` | [Register a user]    |
-| POST   | `/api/[users/login]`    | [Log in]             |
-| GET    | `/api/[jobs]`           | [Get all jobs]       |
-| POST   | `/api/[jobs]`           | [Create a job]       |
-
-> Update this table to match your files in `routes/`.
-
----
-
-## 📸 Screenshots
-
-| Home | Job Listings |
-|------|--------------|
-| ![Home](./screenshots/home.png) | ![Jobs](./screenshots/jobs.png) |
+| Script | Description |
+|--------|-------------|
+| `npm start` | Start the production server |
+| `npm run server` | Start the backend with Nodemon |
+| `npm run client` | Start the React dev server |
+| `npm run dev` | Run backend and frontend together |
+| `npm run client-install` | Install client dependencies |
 
 ---
 
 ## ☁️ Deployment
 
-The `heroku-postbuild` script is configured, so the app can be deployed to Heroku. Set `MONGO_URI` as a config var in your dashboard.
+The project includes a `heroku-postbuild` script that builds the React client, so it can be deployed to Heroku. Set `MONGO_URI` as a config var in the dashboard.
 
 ---
-
-## 🔮 Future Improvements
-
-- [Email notifications]
-- [Resume upload]
-- [Admin dashboard]
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first.
-
-## 📄 License
-
-[ISC](LICENSE)
 
 ## 👤 Author
 
